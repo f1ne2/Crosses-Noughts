@@ -46,6 +46,19 @@ const App: () => Node = () => {
         }, 2000)
       }
     })
+    let counter = 0;
+    listOfItems.forEach((item, index) => {
+      if (item.value)
+        counter += 1
+    })
+    if (counter === listOfItems.length) {
+      alert("It's draw!")
+      setTimeout(() => {
+        setListOfItems(() => {
+          return initialState
+        })
+      }, 2000)
+    }
   }
   
   const addElementToField = (item) => {
